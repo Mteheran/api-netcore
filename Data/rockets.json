@@ -1,0 +1,26 @@
+[
+    {
+      "id": 0,
+      "builder": "NASA",
+      "target": "Moon",
+      "speed": 7.8
+    },
+    {
+      "id": 1,
+      "builder": "NASA",
+      "target": "Mars",
+      "speed": 10.9
+    },
+    {
+      "id": 2,
+      "builder": "NASA",
+      "target": "Jupiter",
+      "speed": 42.1
+    },
+    {
+      "id": 3,
+      "builder": "NASA",
+      "target": "Saturn",
+      "speed": 0
+    }
+  ]
