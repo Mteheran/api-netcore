@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace ApiNetcore
 {
@@ -34,7 +28,31 @@ namespace ApiNetcore
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(
+                routes =>
+                {
+                    routes.MapRoute(
+                    name: "RocketsRouteGet",
+                    template: "api/RocketsRoute/{id:int?}", 
+                    defaults: new { controller = "RocketsRoute", action = "Get" });
+
+                    routes.MapRoute(
+                    name: "RocketsRoutePost",
+                    template: "api/RocketsRoute/{id:int?}",
+                    defaults: new { controller = "RocketsRoute", action = "Post" });
+
+                    routes.MapRoute(
+                    name: "RocketsRoutePut",
+                    template: "api/RocketsRoute/{id:int?}",
+                    defaults: new { controller = "RocketsRoute", action = "Put" });
+
+                    routes.MapRoute(
+                    name: "RocketsRoutePatch",
+                    template: "api/RocketsRoute/{id:int?}",
+                    defaults: new { controller = "RocketsRoute", action = "Patch" });
+
+
+                });
         }
     }
 }
